@@ -13,5 +13,22 @@ pipeline {
       }
     }
 
+    stage('scp') {
+      steps {
+        sh 'scp -r /var/jenkins_home/workspace/springboot-jenkins_master/demo/target/demo-1.0-SNAPSHOT.jar root@106.14.37.126:/home/springboot-jenkins/'
+      }
+    }
+
+    stage('run') {
+      steps {
+        sh '''su - jenkins -c "ssh root@106.14.37.126 > /dev/null 2>&1 << eeooff
+cd springboot-jenkins
+nohup java -jar demo-1.0-SNAPSHOT.jar &
+eeooff
+echo done!"
+'''
+      }
+    }
+
   }
 }
