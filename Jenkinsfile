@@ -22,7 +22,7 @@ pipeline {
     stage('run') {
       steps {
         sh '''su - jenkins -c "ssh root@106.14.37.126 > /dev/null 2>&1 << eeooff
-cd /home/springboot-jenkins
+cd /home/springboot-jenkins/
 nohup java -jar demo-1.0-SNAPSHOT.jar &
 eeooff
 echo done!"
