@@ -21,10 +21,7 @@ pipeline {
 
     stage('run') {
       steps {
-        sh '''ssh root@106.14.37.126 "
-> nohup java -jar /home/springboot-jenkins/demo-1.0-SNAPSHOT.jar &
->
-"
+        sh '''ssh root@106.14.37.126 "nohup java -jar /home/springboot-jenkins/demo-1.0-SNAPSHOT.jar &"
 '''
       }
     }
