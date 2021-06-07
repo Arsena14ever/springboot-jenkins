@@ -23,7 +23,7 @@ pipeline {
       steps {
         sh '''ssh root@106.14.37.126 "
 > cd /home/springboot-jenkins/
-> nohup java -jar demo-1.0-SNAPSHOT.jar &
+> nohup java -jar /home/springboot-jenkins/demo-1.0-SNAPSHOT.jar &
 >
 "
 '''
