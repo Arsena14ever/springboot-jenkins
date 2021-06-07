@@ -7,5 +7,11 @@ pipeline {
       }
     }
 
+    stage('product') {
+      steps {
+        archiveArtifacts 'target/*.jar'
+      }
+    }
+
   }
 }
